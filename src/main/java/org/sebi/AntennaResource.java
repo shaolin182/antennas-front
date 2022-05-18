@@ -10,7 +10,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @Path("rest")
 public class AntennaResource {
 
-    @ConfigProperty(name = "ping", defaultValue = "ping")
+    @ConfigProperty(name = "ping", defaultValue = "ERABLE")
     String ping;
 
     @GET

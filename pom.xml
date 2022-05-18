@@ -6,6 +6,8 @@
   <artifactId>antennas-front</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <properties>
+    <jkube.build.strategy>jib</jkube.build.strategy>
+    <jkube.generator.name>quay.io/sunix/code-with-quarkus</jkube.generator.name>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <failsafe.useModulePath>false</failsafe.useModulePath>
     <maven.compiler.release>11</maven.compiler.release>
@@ -87,6 +89,11 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.jkube</groupId>
+        <artifactId>openshift-maven-plugin</artifactId>
+        <version>1.7.0</version>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
