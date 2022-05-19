@@ -1,5 +1,6 @@
 package org.sebi.incident;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.sebi.IIncidentClient;
 
@@ -16,8 +17,11 @@ public class IncidentResource {
     @Inject
     IIncidentClient incidentClient;
 
+    @ConfigProperty(name = "my-secret")
+    String secret;
+
     @GET
     public List<Incident> getIncidents(){
-       return incidentClient.getIncidents("secret");
+       return incidentClient.getIncidents(secret);
     } 
 }
