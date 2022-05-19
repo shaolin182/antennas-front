@@ -22,6 +22,15 @@ public class IncidentResource {
 
     @GET
     public List<Incident> getIncidents(){
-       return incidentClient.getIncidents(secret);
+       try {
+           return incidentClient.getIncidents(secret);
+       } catch (Exception e){
+           Incident incident = new Incident();
+           incident.setId(666);
+           incident.setDescription("fallback");
+           incident.setStatus(false);
+           return List.of(incident);
+       }
+
     } 
 }
