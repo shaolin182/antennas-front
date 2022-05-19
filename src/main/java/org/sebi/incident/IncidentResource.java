@@ -18,6 +18,6 @@ public class IncidentResource {
 
     @GET
     public List<Incident> getIncidents(){
-       return incidentClient.getIncidents("toto");
+       return incidentClient.getIncidents("secret");
     } 
 }
