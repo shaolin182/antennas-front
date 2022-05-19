@@ -15,14 +15,11 @@ import org.sebi.IIncidentClient;
 @ApplicationScoped
 public class IncidentStartup {
 
-    @RestClient
-    @Inject
-    IIncidentClient incidentClient;
+
     
     @Transactional
     void onStart(@Observes StartupEvent ev) {
-        List<Incident> incidents = incidentClient.getIncidents("toto");
-        incidents.forEach(i -> i.persist());
+
     }
 
 }
